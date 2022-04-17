@@ -67,8 +67,9 @@ public:
 	   int factions[] = { 1012, 934, 932, 942, 989, 947 };
 	   
 	   for (auto const& faction : factions) {
-		player->GetReputationMgr().SetOneFactionReputation(faction, amount, false);
-		player->GetReputationMgr().SendState(player->GetReputationMgr().GetState(faction));
+	    FactionEntry const* factionEntry = sFactionStore.LookupEntry(faction);
+		player->GetReputationMgr().SetOneFactionReputation(factionEntry, amount, false);
+		player->GetReputationMgr().SendState(player->GetReputationMgr().GetState(factionEntry));
 	   }
    }
 };
