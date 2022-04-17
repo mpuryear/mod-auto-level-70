@@ -63,7 +63,7 @@ public:
    
    void MaxAllTBCReps(Player* player) {
 	   float amount = 42000;
-	   int factions[] = [1012, 934, 932, 942, 989, 947];
+	   int factions[] = { 1012, 934, 932, 942, 989, 947 };
 	   
 	   for (int i = 0; i < factions.size; i++) {
 		player->GetReputationMgr().SetOneFactionReputation(factions[i], amount, false);
