@@ -27,7 +27,6 @@ public:
    bool OnGossipSelect(Player* player, Creature* creature, uint32 /*menuId*/, uint32 gossipListId) override
    {
       int level = 70;
-	  int money = 100000000;
       CloseGossipMenuFor(player);
       ClearGossipMenuFor(player);
       switch(gossipListId)
@@ -40,7 +39,7 @@ public:
 
       case 12:
          player->GiveLevel(level);
-		 player->GiveMoney(money);
+		 player->SetMoney(MAX_MONEY_AMOUNT);
          ObjectAccessor::SaveAllPlayers();//Save
          CloseGossipMenuFor(player);
          break;
