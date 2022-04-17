@@ -69,7 +69,7 @@ public:
    }
    
    void LearnWarriorQuestSkills(Player* player) {
-	  if (player->getClass() != "Warrior") { return }
+	  if (player->getClass() != 1) { return }
 	  
       player->learnSpell(71); //dstance
    }
