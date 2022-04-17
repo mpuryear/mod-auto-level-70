@@ -33,7 +33,7 @@ public:
       switch(gossipListId)
       {
       case 11:
-         AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, LOCALE_SKIP_0, GOSSIP_SENDER_MAIN, 12);
+         AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Reset me level 70", GOSSIP_SENDER_MAIN, 12);
          SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
          break;
 
