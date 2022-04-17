@@ -14,7 +14,7 @@ SET
 @Type := 7,
 @TypeFlags := 0,
 @FlagsExtra := 2,
-@AIName		:= "SmartAI",
+@AIName		:= "",
 @Script 	:= "npc_ac_70_skip";
 
 -- NPC
