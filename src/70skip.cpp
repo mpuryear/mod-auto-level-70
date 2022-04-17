@@ -40,6 +40,8 @@ public:
       case 12:
          player->GiveLevel(level);
 		 player->SetMoney(MAX_MONEY_AMOUNT);
+		 LearnAllClassQuestSkills(player);
+		 MaxAllTBCReps(player);
          ObjectAccessor::SaveAllPlayers();//Save
          CloseGossipMenuFor(player);
          break;
@@ -53,6 +55,27 @@ public:
       }
 
       return true;
+   }
+   
+   void LearnAllClassQuestSkills(Player* player) {
+	   
+   }
+   
+   void MaxAllTBCReps(Player* player) {
+	   float amount = 42000;
+	   int [] factions = [
+		1012,
+		934,
+		932,
+		942,
+		989,
+		947
+	   ];
+	   
+	   for (int i = 0; i < factions.size; i++) {
+		player->GetReputationMgr().SetOneFactionReputation(factions[i], amount, false);
+		player->GetReputationMgr().SendState(player->GetReputationMgr().GetState(factions[i]));
+	   }
    }
 };
 
