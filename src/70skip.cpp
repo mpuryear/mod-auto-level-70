@@ -10,6 +10,9 @@
 #include "ScriptedCreature.h"
 #include "ScriptedGossip.h"
 #include "ReputationMgr.h"
+#include "PlayerCommand.h"
+#include "SpellInfo.h"
+#include "SpellMgr.h"
 
 #define LOCALE_SKIP_0 "Reset me level 70"
 
@@ -58,7 +61,18 @@ public:
    }
    
    void LearnAllClassQuestSkills(Player* player) {
-	   
+	   switch(player->getClass()) {
+		   case "Warrior": 
+				LearnWarriorQuestSkills(player);
+				break;
+			default: break;
+	   }
+   }
+   
+   void LearnWarriorQuestSkills(Player* player) {
+	  if (player->getClass() != "Warrior") { return }
+	  
+      Acore::PlayerCommand::HandleLearnSpellCommand(handler, player, 71, allRanks); //dstance
    }
    
    void MaxAllTBCReps(Player* player) {
