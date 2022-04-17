@@ -65,9 +65,9 @@ public:
 	   float amount = 42000;
 	   int factions[] = { 1012, 934, 932, 942, 989, 947 };
 	   
-	   for (int i = 0; i < factions.size(); i++) {
-		player->GetReputationMgr().SetOneFactionReputation(factions[i], amount, false);
-		player->GetReputationMgr().SendState(player->GetReputationMgr().GetState(factions[i]));
+	   for (auto const& faction : factions) {
+		player->GetReputationMgr().SetOneFactionReputation(faction, amount, false);
+		player->GetReputationMgr().SendState(player->GetReputationMgr().GetState(faction));
 	   }
    }
 };
