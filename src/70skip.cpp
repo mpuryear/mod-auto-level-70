@@ -71,6 +71,8 @@ public:
    void LearnWarriorQuestSkills(Player* player) {
 	  if (player->getClass() == 1) { 
 		player->learnSpell(71); //dstance
+		player->learnSpell(355); //taunt
+		player->learnSpell(2458); //zerkerstance
 	  }      
    }
    
