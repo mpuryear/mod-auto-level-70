@@ -79,7 +79,7 @@ public:
 				break;
 			case 8: // Mage
 				break;
-			case 8: // Warlock
+			case 9: // Warlock
 				break;
 			case 11: // Druid
 				LearnDruidQuestSkills(player);
@@ -102,7 +102,6 @@ public:
 		player->learnSpell(5487); //bear form
 		player->learnSpell(6795); // growl
 		player->learnSpell(40120); //swift flight
-		
    }
    
    void MaxAllTBCReps(Player* player) {
