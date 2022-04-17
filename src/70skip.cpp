@@ -10,7 +10,6 @@
 #include "ScriptedCreature.h"
 #include "ScriptedGossip.h"
 #include "ReputationMgr.h"
-#include "PlayerCommand.h"
 #include "SpellInfo.h"
 #include "SpellMgr.h"
 
@@ -74,7 +73,7 @@ public:
    void LearnWarriorQuestSkills(Player* player) {
 	  if (player->getClass() != "Warrior") { return }
 	  
-      Acore::PlayerCommand::HandleLearnSpellCommand(handler, player, 71, allRanks); //dstance
+      player->learnSpell(71); //dstance
    }
    
    void MaxAllTBCReps(Player* player) {
