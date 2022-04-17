@@ -19,16 +19,8 @@ public:
 
    bool OnGossipHello(Player* player, Creature* creature) override
    {
-      if (creature->IsQuestGiver())
-      {
-         player->PrepareQuestMenu(creature->GetGUID());
-      }
-
       AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, LOCALE_SKIP_0, GOSSIP_SENDER_MAIN, 11);
-
-      player->TalkedToCreature(creature->GetEntry(), creature->GetGUID());
-      SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
-
+      SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, creature);
       return true;
    }
 
