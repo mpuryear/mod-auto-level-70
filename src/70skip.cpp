@@ -14,6 +14,8 @@
 #include "SpellInfo.h"
 #include "SpellMgr.h"
 
+using namespace Acore:ChatCommands;
+
 #define LOCALE_SKIP_0 "Reset me level 70"
 
 class Azerothcore_level_70_skip : public CreatureScript
