@@ -63,7 +63,7 @@ public:
    
    void MaxAllTBCReps(Player* player) {
 	   float amount = 42000;
-	   int [] factions = [
+	   int factions[] = [
 		1012,
 		934,
 		932,
