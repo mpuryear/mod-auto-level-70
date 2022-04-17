@@ -33,7 +33,7 @@ public:
       switch(gossipListId)
       {
       case 11:
-         AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, LOCALE_SKIP_0, GOSSIP_SENDER_MAIN, 12);
+         AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Reset me level 70", GOSSIP_SENDER_MAIN, 12);
          SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
          break;
 
@@ -45,7 +45,7 @@ public:
          ObjectAccessor::SaveAllPlayers();//Save
          CloseGossipMenuFor(player);
          break;
-      
+  
       default:
          break;
       }
@@ -64,7 +64,7 @@ public:
 	   for (auto const& faction : factions) {
 	    FactionEntry const* factionEntry = sFactionStore.LookupEntry(faction);
 		player->GetReputationMgr().SetOneFactionReputation(factionEntry, amount, false);
-		player->GetReputationMgr().SendState(player->GetReputationMgr().GetState(factionEntry));
+		player->GetReputationMgr().SendState(player->GetReputationMgr().GetState(faction));
 	   }
    }
 };
