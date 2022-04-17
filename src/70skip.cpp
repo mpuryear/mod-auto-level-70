@@ -60,7 +60,7 @@ public:
    }
    
    void LearnAllClassQuestSkills(Player* player) {
-	   switch(player->getClass()) {
+	   switch(string(player->getClass())) {
 		   case "Warrior": 
 				LearnWarriorQuestSkills(player);
 				break;
