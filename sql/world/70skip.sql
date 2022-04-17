@@ -1,7 +1,7 @@
 SET
 @Entry	:= 601017,
 @Model := 14612, -- Tauren Warmaster
-@Name := "Biggus Dickus",
+@Name := "DRFaggot",
 @Title := "Seventy Booster",
 @Icon := "Speak",
 @GossipMenu := 0,
