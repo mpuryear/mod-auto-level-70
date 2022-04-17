@@ -69,9 +69,9 @@ public:
    }
    
    void LearnWarriorQuestSkills(Player* player) {
-	  if (player->getClass() != 1) { return }
-	  
-      player->learnSpell(71); //dstance
+	  if (player->getClass() == 1) { 
+		player->learnSpell(71); //dstance
+	  }      
    }
    
    void MaxAllTBCReps(Player* player) {
