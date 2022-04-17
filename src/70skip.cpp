@@ -100,6 +100,9 @@ public:
    
    void LearnDruidQuestSkills(Player* player) {
 		player->learnSpell(5487); //bear form
+		player->learnSpell(33878); //Mangle bear
+		player->learnSpell(33876); //Mangle cat
+		player->learnSpell(6807); //Maul
 		player->learnSpell(6795); // growl
 		player->learnSpell(40120); //swift flight
    }
