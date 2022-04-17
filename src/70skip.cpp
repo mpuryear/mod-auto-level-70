@@ -9,6 +9,7 @@
 #include "ObjectAccessor.h"
 #include "ScriptedCreature.h"
 #include "ScriptedGossip.h"
+#include "ReputationMgr.h"
 
 #define LOCALE_SKIP_0 "Reset me level 70"
 
