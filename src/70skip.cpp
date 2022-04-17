@@ -28,14 +28,12 @@ public:
    bool OnGossipSelect(Player* player, Creature* creature, uint32 /*menuId*/, uint32 gossipListId) override
    {
       int level = 70;
-      
+      CloseGossipMenuFor(player);
+	  ClearGossipMenuFor(player);
       switch(gossipListId)
       {
       case 11:
-	     CloseGossipMenuFor(player);
-         ClearGossipMenuFor(player);
-         AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Yes", GOSSIP_SENDER_MAIN, 12);
-		 AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "No", GOSSIP_SENDER_MAIN, 13);
+         AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, LOCALE_SKIP_0, GOSSIP_SENDER_MAIN, 12);
          SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
          break;
 
