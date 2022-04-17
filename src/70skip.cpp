@@ -64,16 +64,45 @@ public:
 		   case 1: // warrior
 				LearnWarriorQuestSkills(player);
 				break;
+			case 2: // paladin
+				LearnPaladinQuestSkills(player);
+				break;
+			case 3: // hunter
+				break;
+			case 4: // Rogue
+				break;
+			case 5: // Priest
+				break;
+			case 6: // DK
+				break;
+			case 7: // Shaman
+				break;
+			case 8: // Mage
+				break;
+			case 8: // Warlock
+				break;
+			case 11: // Druid
+				LearnDruidQuestSkills(player);
+				break;
 			default: break;
 	   }
    }
    
-   void LearnWarriorQuestSkills(Player* player) {
-	  if (player->getClass() == 1) { 
+   void LearnWarriorQuestSkills(Player* player) {  
 		player->learnSpell(71); //dstance
 		player->learnSpell(355); //taunt
-		player->learnSpell(2458); //zerkerstance
-	  }      
+		player->learnSpell(2458); //zerkerstance    
+   }
+   
+   void LearnPaladinQuestSkills(Player* player) {
+		player->learnSpell(7328); //redemption
+   }
+   
+   void LearnDruidQuestSkills(Player* player) {
+		player->learnSpell(5487); //bear form
+		player->learnSpell(6795); // growl
+		player->learnSpell(40120); //swift flight
+		
    }
    
    void MaxAllTBCReps(Player* player) {
