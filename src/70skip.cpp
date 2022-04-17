@@ -60,8 +60,8 @@ public:
    }
    
    void LearnAllClassQuestSkills(Player* player) {
-	   switch(std::string(player->getClass())) {
-		   case "Warrior": 
+	   switch(player->getClass()) {
+		   case 1: // warrior
 				LearnWarriorQuestSkills(player);
 				break;
 			default: break;
