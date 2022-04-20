@@ -107,6 +107,14 @@ public:
 		player->learnSpell(40120); //swift flight
    }
    
+   void LearnHunterQuestSkills(Player* player) {
+		player->learnSpell(6991); //Feed Pet
+		player->learnSpell(883); //Call pet
+		player->learnSpell(2641); //Dismiss Pet
+		player->learnSpell(1515); //Tame Beast
+		player->learnSpell(1462); //Beast Lore
+   }
+   
    void MaxAllTBCReps(Player* player) {
 	   float amount = 42000;
 	   int factions[] = { 1012, 934, 932, 942, 989, 947 };
