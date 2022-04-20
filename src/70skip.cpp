@@ -68,6 +68,7 @@ public:
 				LearnPaladinQuestSkills(player);
 				break;
 			case 3: // hunter
+				LearnHunterQuestSkills(player);
 				break;
 			case 4: // Rogue
 				break;
