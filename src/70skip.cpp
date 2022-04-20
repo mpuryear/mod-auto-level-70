@@ -77,10 +77,12 @@ public:
 			case 6: // DK
 				break;
 			case 7: // Shaman
+				LearnShamanQuestSkills(player)
 				break;
 			case 8: // Mage
 				break;
 			case 9: // Warlock
+				LearnWarlockQuestSkills(player)
 				break;
 			case 11: // Druid
 				LearnDruidQuestSkills(player);
@@ -114,6 +116,14 @@ public:
 		player->learnSpell(2641); //Dismiss Pet
 		player->learnSpell(1515); //Tame Beast
 		player->learnSpell(1462); //Beast Lore
+   }
+   
+   void LearnWarlockQuestSkills(Player* player) {
+		player->learnSpell(691); //summon felhunter
+   }
+   
+   void LearnShamanQuestSkills(Player* player) {
+		player->learnSpell(3599); //Searing Totem
    }
    
    void MaxAllTBCReps(Player* player) {
