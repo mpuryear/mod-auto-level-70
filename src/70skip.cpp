@@ -77,12 +77,12 @@ public:
 			case 6: // DK
 				break;
 			case 7: // Shaman
-				LearnShamanQuestSkills(player)
+				LearnShamanQuestSkills(player);
 				break;
 			case 8: // Mage
 				break;
 			case 9: // Warlock
-				LearnWarlockQuestSkills(player)
+				LearnWarlockQuestSkills(player);
 				break;
 			case 11: // Druid
 				LearnDruidQuestSkills(player);
