@@ -1,7 +1,7 @@
 SET
 @Entry	:= 601017,
 @Model := 22953, -- Male Belf in t5
-@Name := "DRFaggot",
+@Name := "Booster Mcgee",
 @Title := "Seventy Booster",
 @Icon := "Speak",
 @GossipMenu := 0,
