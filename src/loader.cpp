@@ -4,6 +4,7 @@
 
 // From SC
 void AddLvl70SkipScripts();
+void AddLvl80SkipScripts();
 
 // Add all
 // cf. the naming convention https://github.com/azerothcore/azerothcore-wotlk/blob/master/doc/changelog/master.md#how-to-upgrade-4

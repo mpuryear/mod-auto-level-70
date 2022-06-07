@@ -1,6 +1,6 @@
 SET
 @Entry	:= 601017,
-@Model := 22953, -- Male Belf in t5
+@Model := 23200, -- KJ
 @Name := "Booster Mcgee",
 @Title := "Seventy Booster",
 @Icon := "Speak",
@@ -36,7 +36,7 @@ INSERT INTO `creature_template_movement` (`CreatureId`, `Ground`, `Swim`, `Fligh
 
 SET
 @Entry	:= 601018,
-@Model := 22953, -- Male Belf in t5
+@Model := 25337, -- LK
 @Name := "Rooster the Booster",
 @Title := "Eighty Booster",
 @Icon := "Speak",
