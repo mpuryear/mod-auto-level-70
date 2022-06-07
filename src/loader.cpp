@@ -11,5 +11,6 @@ void AddLvl70SkipScripts();
 void Addmod_auto_level_70Scripts()
 {
     AddLvl70SkipScripts();
+    AddLvl80SkipScripts();
 }
 
