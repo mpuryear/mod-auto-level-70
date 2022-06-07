@@ -128,7 +128,7 @@ public:
    
    void MaxAllTBCReps(Player* player) {
 	   float amount = 42000;
-	   int factions[] = { 1012, 934, 932, 942, 989, 947 };
+	   int factions[] = { 1012, 934, 932, 935, 942, 989, 947 };
 	   
 	   for (auto const& faction : factions) {
 	    FactionEntry const* factionEntry = sFactionStore.LookupEntry(faction);
