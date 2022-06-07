@@ -13,7 +13,7 @@
 #include "SpellInfo.h"
 #include "SpellMgr.h"
 
-#define LOCALE_SKIP_0 "Reset me level 80"
+#define LOCALE_SKIP_1 "Reset me level 80"
 
 class Azerothcore_level_80_skip : public CreatureScript
 {
@@ -22,7 +22,7 @@ public:
 
    bool OnGossipHello(Player* player, Creature* creature) override
    {
-      AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, LOCALE_SKIP_0, GOSSIP_SENDER_MAIN, 11);
+      AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, LOCALE_SKIP_1, GOSSIP_SENDER_MAIN, 11);
       SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, creature);
       return true;
    }
