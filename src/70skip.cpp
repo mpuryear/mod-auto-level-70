@@ -13,8 +13,6 @@
 #include "SpellInfo.h"
 #include "SpellMgr.h"
 
-#define LOCALE_SKIP_0 "Reset me level 70"
-
 class Azerothcore_level_70_skip : public CreatureScript
 {
 public:
@@ -22,41 +20,27 @@ public:
 
    bool OnGossipHello(Player* player, Creature* creature) override
    {
-      AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, LOCALE_SKIP_0, GOSSIP_SENDER_MAIN, 11);
+      AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Reset me to level 70", GOSSIP_SENDER_MAIN, 11);
       SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, creature);
       return true;
    }
 
-   bool OnGossipSelect(Player* player, Creature* creature, uint32 /*menuId*/, uint32 gossipListId) override
+   bool OnGossipSelect(Player* player, Creature* creature, uint32 Sender, uint32 gossipListId) override
    {
-      int level = 70;
-      CloseGossipMenuFor(player);
-	  ClearGossipMenuFor(player);
-      switch(gossipListId)
-      {
-      case 11:
-         AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Reset me level 70", GOSSIP_SENDER_MAIN, 12);
-         SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
-         break;
+		int level = 70;
+		player->PlayerTalkClass->ClearMenus()
+	  
+		if Sender != GOSSIP_SENDER_MAIN { return true }
+	  
+		player->GiveLevel(level);
+		player->SetMoney(MAX_MONEY_AMOUNT);
+		LearnAllClassQuestSkills(player);
+		MaxAllTBCReps(player);
+		ObjectAccessor::SaveAllPlayers();//Save
+		CloseGossipMenuFor(player);
+       
 
-      case 12:
-         player->GiveLevel(level);
-		 player->SetMoney(MAX_MONEY_AMOUNT);
-		 LearnAllClassQuestSkills(player);
-		 MaxAllTBCReps(player);
-         ObjectAccessor::SaveAllPlayers();//Save
-         CloseGossipMenuFor(player);
-         break;
-      
-      case 13: 
-         CloseGossipMenuFor(player);
-         break;
-  
-      default:
-         break;
-      }
-
-      return true;
+		return true;
    }
    
    void LearnAllClassQuestSkills(Player* player) {

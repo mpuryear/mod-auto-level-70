@@ -44,7 +44,7 @@ SET
 @MaxLevel := 80,
 @Faction := 35,
 @NPCFlag := 1,
-@Scale := 1.5,
+@Scale := 2,
 @Rank := 0,
 @Type := 7,
 @TypeFlags := 0,
