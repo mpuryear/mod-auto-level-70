@@ -15,7 +15,7 @@ SET
 @TypeFlags := 0,
 @FlagsExtra := 0,
 @AIName		:= "",
-@Script 	:= "npc_ac_70_skip";
+@Script 	:= "Azerothcore_level_70_skip";
 
 -- NPC
 DELETE FROM creature_template WHERE entry = @Entry;
@@ -50,7 +50,7 @@ SET
 @TypeFlags := 0,
 @FlagsExtra := 0,
 @AIName		:= "",
-@Script 	:= "npc_ac_80_skip";
+@Script 	:= "Azerothcore_level_80_skip";
 
 -- NPC
 DELETE FROM creature_template WHERE entry = @Entry;

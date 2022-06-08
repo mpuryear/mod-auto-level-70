@@ -16,7 +16,7 @@
 class Azerothcore_level_70_skip : public CreatureScript
 {
 public:
-   Azerothcore_level_70_skip() : CreatureScript("npc_ac_70_skip") { }
+   Azerothcore_level_70_skip() : CreatureScript("Azerothcore_level_70_skip") { }
 
    bool OnGossipHello(Player* player, Creature* creature) override
    {
@@ -124,7 +124,7 @@ public:
 class Azerothcore_level_80_skip : public CreatureScript
 {
 public:
-   Azerothcore_level_80_skip() : CreatureScript("npc_ac_80_skip") { }
+   Azerothcore_level_80_skip() : CreatureScript("Azerothcore_level_80_skip") { }
 
    bool OnGossipHello(Player* player, Creature* creature) override
    {
