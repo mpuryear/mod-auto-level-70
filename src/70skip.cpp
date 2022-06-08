@@ -21,6 +21,7 @@ public:
    bool OnGossipHello(Player* player, Creature* creature) override
    {
       AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Set me to level 70", GOSSIP_SENDER_MAIN, 1);
+	  AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Cancel", GOSSIP_SENDER_MAIN, 2);
       SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, creature);
       return true;
    }
@@ -31,12 +32,16 @@ public:
 		player->PlayerTalkClass->ClearMenus();
 	  
 		if (Sender == GOSSIP_SENDER_MAIN) {
-			player->GiveLevel(level);
-			player->SetMoney(MAX_MONEY_AMOUNT);
-			LearnAllClassQuestSkills(player);
-			MaxAllTBCReps(player);
-			ObjectAccessor::SaveAllPlayers();//Save
-			CloseGossipMenuFor(player);
+			if (gossipListId == 1) {
+				player->GiveLevel(level);
+				player->SetMoney(MAX_MONEY_AMOUNT);
+				LearnAllClassQuestSkills(player);
+				MaxAllTBCReps(player);
+				ObjectAccessor::SaveAllPlayers();//Save
+				CloseGossipMenuFor(player);
+			} else if (gossipListId == 2) {
+				CloseGossipMenuFor(player);
+			}
 		}
 
 		return true;
@@ -129,6 +134,7 @@ public:
    bool OnGossipHello(Player* player, Creature* creature) override
    {
       AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Set me to level 80", GOSSIP_SENDER_MAIN, 1);
+	  AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Cancel", GOSSIP_SENDER_MAIN, 2);
       SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, creature);
       return true;
    }
@@ -139,12 +145,16 @@ public:
 		player->PlayerTalkClass->ClearMenus();
 	  
 		if (Sender == GOSSIP_SENDER_MAIN) {
-			player->GiveLevel(level);
-			player->SetMoney(MAX_MONEY_AMOUNT);
-			LearnAllClassQuestSkills(player);
-			MaxAllTBCReps(player);
-			ObjectAccessor::SaveAllPlayers();//Save
-			CloseGossipMenuFor(player);
+			if (gossipListId == 1) {
+				player->GiveLevel(level);
+				player->SetMoney(MAX_MONEY_AMOUNT);
+				LearnAllClassQuestSkills(player);
+				MaxAllTBCReps(player);
+				ObjectAccessor::SaveAllPlayers();//Save
+				CloseGossipMenuFor(player);
+			} else if (gossipListId == 2) {
+				CloseGossipMenuFor(player);
+			}
 		}
 
 		return true;
