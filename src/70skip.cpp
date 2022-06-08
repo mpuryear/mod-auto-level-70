@@ -20,25 +20,24 @@ public:
 
    bool OnGossipHello(Player* player, Creature* creature) override
    {
-      AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Reset me to level 70", GOSSIP_SENDER_MAIN, 11);
+      AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Reset me to level 70", GOSSIP_SENDER_MAIN, 1);
       SendGossipMenuFor(player, DEFAULT_GOSSIP_MESSAGE, creature);
       return true;
    }
 
-   bool OnGossipSelect(Player* player, Creature* creature, uint32 Sender, uint32 gossipListId) override
+   bool OnGossipSelect(Player* player, Creature* /*creature*/, uint32 Sender, uint32 gossipListId) override
    {
 		int level = 70;
-		player->PlayerTalkClass->ClearMenus()
+		player->PlayerTalkClass->ClearMenus();
 	  
-		if Sender != GOSSIP_SENDER_MAIN { return true }
-	  
-		player->GiveLevel(level);
-		player->SetMoney(MAX_MONEY_AMOUNT);
-		LearnAllClassQuestSkills(player);
-		MaxAllTBCReps(player);
-		ObjectAccessor::SaveAllPlayers();//Save
-		CloseGossipMenuFor(player);
-       
+		if Sender == GOSSIP_SENDER_MAIN {
+			player->GiveLevel(level);
+			player->SetMoney(MAX_MONEY_AMOUNT);
+			LearnAllClassQuestSkills(player);
+			MaxAllTBCReps(player);
+			ObjectAccessor::SaveAllPlayers();//Save
+			CloseGossipMenuFor(player);
+		}
 
 		return true;
    }
