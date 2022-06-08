@@ -30,7 +30,7 @@ public:
 		int level = 70;
 		player->PlayerTalkClass->ClearMenus();
 	  
-		if Sender == GOSSIP_SENDER_MAIN {
+		if (Sender == GOSSIP_SENDER_MAIN) {
 			player->GiveLevel(level);
 			player->SetMoney(MAX_MONEY_AMOUNT);
 			LearnAllClassQuestSkills(player);
@@ -138,7 +138,7 @@ public:
 		int level = 80;
 		player->PlayerTalkClass->ClearMenus();
 	  
-		if Sender == GOSSIP_SENDER_MAIN {
+		if (Sender == GOSSIP_SENDER_MAIN) {
 			player->GiveLevel(level);
 			player->SetMoney(MAX_MONEY_AMOUNT);
 			LearnAllClassQuestSkills(player);
