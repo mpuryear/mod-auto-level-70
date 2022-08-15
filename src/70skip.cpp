@@ -82,7 +82,8 @@ public:
    void LearnWarriorQuestSkills(Player* player) {  
 		player->learnSpell(71); //dstance
 		player->learnSpell(355); //taunt
-		player->learnSpell(2458); //zerkerstance    
+		player->learnSpell(2458); //zerkerstance 
+		player->learnSpell(7386); // sunder		
    }
    
    void LearnPaladinQuestSkills(Player* player) {
@@ -149,7 +150,7 @@ public:
 				player->GiveLevel(level);
 				player->SetMoney(MAX_MONEY_AMOUNT);
 				LearnAllClassQuestSkills(player);
-				MaxAllTBCReps(player);
+				MaxAllWrathReps(player);
 				ObjectAccessor::SaveAllPlayers();//Save
 				CloseGossipMenuFor(player);
 			} else if (gossipListId == 2) {
@@ -195,7 +196,8 @@ public:
    void LearnWarriorQuestSkills(Player* player) {  
 		player->learnSpell(71); //dstance
 		player->learnSpell(355); //taunt
-		player->learnSpell(2458); //zerkerstance    
+		player->learnSpell(2458); //zerkerstance
+		player->learnSpell(7386); // sunder
    }
    
    void LearnPaladinQuestSkills(Player* player) {
@@ -206,7 +208,7 @@ public:
 		player->learnSpell(5487); //bear form
 		player->learnSpell(33878); //Mangle bear
 		player->learnSpell(33876); //Mangle cat
-		player->learnSpell(6807); //Maul
+		player->learnSpell(6807); // Maul
 		player->learnSpell(6795); // growl
 		player->learnSpell(40120); //swift flight
    }
@@ -227,9 +229,26 @@ public:
 		player->learnSpell(3599); //Searing Totem
    }
    
-   void MaxAllTBCReps(Player* player) {
-	   float amount = 42000;
-	   int factions[] = { 1012, 934, 932, 935, 942, 989, 947 };
+   void MaxAllWrathReps(Player* player) {
+	   float amount = 80000;
+	   int factions[] = {
+			1052, // Horde exp
+			1073, // Kaluak
+			1091, // Wyrmrest
+			1090, // kirin tor
+			1098, // Knights of the ebonblade
+			1106, // Argent Crusade
+			1105, // Oracles
+			1104, // Frenzyheart
+			1119, // Hodir
+			1012, 
+			934,
+			932,
+			935,
+			942,
+			989,
+			947
+		};
 	   
 	   for (auto const& faction : factions) {
 	    FactionEntry const* factionEntry = sFactionStore.LookupEntry(faction);
