@@ -227,6 +227,7 @@ public:
    
    void LearnShamanQuestSkills(Player* player) {
 		player->learnSpell(3599); //Searing Totem
+		player->learnSpell(8071); //Stoneskin Totem
    }
    
    void MaxAllWrathReps(Player* player) {
