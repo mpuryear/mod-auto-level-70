@@ -105,6 +105,7 @@ public:
 		player->learnSpell(2641); //Dismiss Pet
 		player->learnSpell(1515); //Tame Beast
 		player->learnSpell(1462); //Beast Lore
+		player->learnSpell(982); // revive pet
    }
    
    void LearnWarlockQuestSkills(Player* player) {
@@ -228,6 +229,7 @@ public:
    void LearnShamanQuestSkills(Player* player) {
 		player->learnSpell(3599); //Searing Totem
 		player->learnSpell(8071); //Stoneskin Totem
+		player->learnSpell(5394); //healing stream Totem
    }
    
    void MaxAllWrathReps(Player* player) {
